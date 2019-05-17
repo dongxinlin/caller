@@ -6,15 +6,13 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {'/a1': {
-        target: 'http://47.101.58.204:8443',
-        // target: 'http://192.168.10.23:8443',
-        // target: 'http://mock.eolinker.com/eap8ASk2b156bc0a65afc4650f07e60c6ddf7e434f4c750?uri=',
-        hangeOrigin: true,
+    proxyTable: {
+      '/a1': {
+        target: 'http://xxx',
+        changeOrigin: true,
         pathRewrite: {
           '^/a1': ''
         }
@@ -22,14 +20,13 @@ module.exports = {
     },
 
     // Various Dev Server settings
-    // host: '192.168.10.96',
+    // host: '192.168.10.200', // can be overwritten by process.env.HOST
     host: 'localhost', // can be overwritten by process.env.HOST
-    port: 8081, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: true,
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
-
 
     /**
      * Source Maps
@@ -53,7 +50,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: './',
 
     /**
      * Source Maps

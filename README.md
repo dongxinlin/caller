@@ -1,6 +1,6 @@
-# wxgzh
+# face
 
-> 
+> A Vue.js project
 
 ## Build Setup
 

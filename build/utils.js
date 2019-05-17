@@ -15,6 +15,10 @@ exports.assetsPath = function (_path) {
 exports.cssLoaders = function (options) {
   options = options || {}
 
+  const stylusOptions = {
+    'resolve url': true
+  }
+
   const cssLoader = {
     loader: 'css-loader',
     options: {
@@ -28,8 +32,9 @@ exports.cssLoaders = function (options) {
       sourceMap: options.sourceMap
     }
   }
+
   // generate loader string to be used with extract text plugin
-  function generateLoaders (loader, loaderOptions) {
+  function generateLoaders(loader, loaderOptions) {
     const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader]
 
     if (loader) {
@@ -46,21 +51,20 @@ exports.cssLoaders = function (options) {
     if (options.extract) {
       return ExtractTextPlugin.extract({
         use: loaders,
+        publicPath: '../../', // 配置文件路径
         fallback: 'vue-style-loader'
       })
     } else {
       return ['vue-style-loader'].concat(loaders)
     }
   }
-  const stylusOptions = {
-    'resolve url': true
-  }
+
   // https://vue-loader.vuejs.org/en/configurations/extract-css.html
   return {
     css: generateLoaders(),
     postcss: generateLoaders(),
     less: generateLoaders('less'),
-    sass: generateLoaders('sass', { indentedSyntax: true }),
+    sass: generateLoaders('sass', {indentedSyntax: true}),
     scss: generateLoaders('sass'),
     stylus: generateLoaders('stylus', stylusOptions),
     styl: generateLoaders('stylus', stylusOptions)

@@ -3,18 +3,20 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+var PostCompilePlugin = require('webpack-post-compile-plugin')
+var TransformModulesPlugin = require('webpack-transform-modules-plugin')
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
-
-var PostCompilePlugin = require('webpack-post-compile-plugin')
-var TransformModulesPlugin = require('webpack-transform-modules-plugin')
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
     app: './src/main.js'
+  },
+  externals: {
+    "BMap": "BMap"
   },
   output: {
     path: config.build.assetsRoot,
@@ -23,17 +25,17 @@ module.exports = {
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
   },
+  plugins: [
+    new PostCompilePlugin(),
+    new TransformModulesPlugin(),
+  ],
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
-    },
+    }
   },
-  plugins: [
-    new PostCompilePlugin(),
-    new TransformModulesPlugin()
-  ],
   module: {
     rules: [
       {
@@ -69,6 +71,15 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        include: [path.resolve(__dirname, './')]
+        // this plugin will be include the post compile node modules path
+        // eg: {"compileDependencies": ["a"]} // package.json
+        // the current rule's include will be like:
+        // `[path.resolve(__dirname, './'), path.resolve(process.cwd(), 'node_modules/a')]`
       }
     ]
   },

@@ -1,0 +1,95 @@
+/* 阴影 */
+.BS {
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, .2);
+}
+
+.BST {
+  box-shadow: -2px -2px 12px rgba(0, 0, 0, .2);
+}
+
+.BSE {
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .2);
+}
+
+.BSA {
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, .2),
+  -2px -2px 12px rgba(0, 0, 0, .2),
+  2px -2px 12px rgba(0, 0, 0, .2),
+  -2px 2px 12px rgba(0, 0, 0, .2);
+}
+
+/* border */
+.bor_B {
+  border-bottom: 0.01rem solid #dddddd;
+}
+
+.bor_R {
+  border-right: 0.01rem solid #dddddd;
+}
+
+.bor_T {
+  border-top: 0.01rem solid #dddddd;
+}
+
+.bor_L {
+  border-left: 0.01rem solid #dddddd;
+}
+
+.bor_TS + .bor_TS {
+  border-top: 0.01rem solid #dddddd;
+}
+
+.border {
+  border: 0.01rem solid #ddd;
+}
+
+.borderBl {
+  border: 0.01rem solid #457bc7 !important;
+  background-color: #fff !important;
+  color: #457bc7 !important;
+}
+
+.borderLs {
+  border: 0.01rem solid #00cc99 !important;
+  background-color: #fff !important;
+  color: #00cc99 !important;
+}
+
+.borderYe {
+  border: 0.01rem solid #e5e46e !important;
+  background-color: #fff !important;
+  color: #e5e46e !important;
+}
+
+.borderJs {
+  border: 0.01rem solid #fabd05 !important;
+  background-color: #fff !important;
+  color: #fabd05 !important;
+}
+
+.borderFe {
+  border: 0.01rem solid #fe6367 !important;
+  background-color: #fff !important;
+  color: #fe6367 !important;
+}
+
+.borderNo {
+  border: none !important;
+}
+
+/* 圆角 */
+.borderRa5R {
+  border-radius: 0.05rem;
+}
+
+.borderRa10R {
+  border-radius: 0.1rem;
+}
+
+.borderRa20R {
+  border-radius: 0.2rem;
+}
+
+.borderRa40R {
+  border-radius: 0.4rem;
+}

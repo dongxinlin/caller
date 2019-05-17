@@ -1,48 +1,51 @@
-import axios from "axios";
-import tool from "./common";
-import qs from "qs"
+import axios from 'axios'
+import tool from '@/utils/tool'
+import qs from 'qs'
 
-var ismessage, tip;
-const loading = tool.messageLoading('正在加载中');
-const server = axios.create({
+var isMessage, isTip
+const loading = tool.messageLoading('正在加载中')
+const request = axios.create({
   baseURL: `${tool.baseURL}`,
-  timeout: 6000,// 请求超时时间,
-  headers: {"Content-Type": "application/x-www-form-urlencoded"},
-  isloading: true,
-  qs: true,
-  ismessage: true,
-  tip: false,
+  timeout: 20000,
+  headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
   withCredentials: false,
-  isWindow: false,
-  isqy: false
-})
-// request拦截器
-server.interceptors.request.use(config => {
-  ismessage = config.ismessage;
-  tip = config.tip;
-  tool.localGet('token') && ( config.headers['token'] = tool.localGet('token'));
-  // (config.data && config.qs) && (config.data = tool.filterRes(config.data));
-  config.qs && (config.data = qs.stringify(config.data, {indices: false}));
-  config.isloading && loading.show();
-  return config
-}, error => {
-  loading.hide();
-  ismessage && tool.messageErr('网络状态差!!!');
-  return Promise.reject(error)
+  qs: true,
+  /* 自定义 */
+  isLoading: true,
+  isMessage: true,
+  isTip: false
 })
 
-server.interceptors.response.use(
-  res => {
-    loading.hide();
-    tool.checkStatus(res.data.status, res.data.message, ismessage, tip);//状态码
-    if (res.data.status == 0) return res.data; //错误判断
-    else return Promise.reject(res)
+/* request拦截器 */
+request.interceptors.request.use(
+  config => {
+    config.isLoading && loading.show()
+    isMessage = config.isMessage
+    isTip = config.isTip
+    tool.localGet('token') && (config.headers['token'] = tool.localGet('token'));
+    (config.data && config.qs) && (config.data = tool.filterRes(config.data))
+    config.qs && (config.data = qs.stringify(config.data, { indices: false }))
+    return config
   },
-  error => {
-    loading.hide();
-    ismessage && tool.messageErr('网络状态差!!!');
-    return Promise.reject(error)
+  err => {
+    loading.hide()
+    isMessage && tool.messageErr('网络状态差')
+    return Promise.reject(err)
   }
 )
 
-export default server
+request.interceptors.response.use(
+  res => {
+    loading.hide()
+    tool.checkStatus(res.data.status, res.data.message, isMessage, isTip)
+    if (res.data.status === 0) return res.data
+    else return Promise.reject(res)
+  },
+  err => {
+    loading.hide()
+    isMessage && tool.messageErr('网络状态差')
+    return Promise.reject(err)
+  }
+)
+
+export default request

@@ -1,0 +1,146 @@
+/* color */
+.colorBl {
+  color: #FF882C !important;
+}
+
+.colorLs {
+  color: #00cc99 !important;
+}
+
+.colorYe {
+  color: #e5e46e !important;
+}
+
+.colorJs {
+  color: #fabd05 !important;
+}
+
+.colorFe {
+  color: #d45048 !important;
+}
+
+.colorQs {
+  color: #08fcfe !important;
+}
+
+.color33 {
+  color: #333333 !important;
+}
+
+.color66 {
+  color: #666666 !important;
+}
+
+.color99 {
+  color: #9A9A9A !important;
+}
+
+.colorFf {
+  color: #ffffff !important;
+}
+
+/* bgc */
+.bgcBl {
+  background-color: #FF882C !important;
+  color: #ffffff !important;
+}
+
+.bgcLs {
+  background-color: #00cc99 !important;
+  color: #ffffff !important;
+}
+
+.bgcYe {
+  background-color: #e5e46e !important;
+  color: #ffffff !important;
+}
+
+.bgcJs {
+  background-color: #fabd05 !important;
+  color: #ffffff !important;
+}
+
+.bgcFe {
+  background-color: #d45048 !important;
+  color: #ffffff !important;
+}
+
+.bgcQs {
+  background-color: #08fcfe !important;
+  color: #ffffff !important;
+}
+
+.bgcHs {
+  background-color: #000000;
+  color: #ffffff !important;
+}
+
+.bgc33 {
+  background-color: #333333;
+  color: #ffffff !important;
+}
+
+.bgc99 {
+  background-color: #aaaaaa !important;
+}
+
+.bgcDd {
+  background-color: #dddddd !important;
+}
+
+.bgcF5 {
+  background-color: #f5f5f5 !important;
+}
+
+.bgcFf {
+  background-color: #ffffff !important;
+}
+
+.bgcTrans {
+  background-color: transparent !important;
+}
+
+.bgcNo {
+  background: none !important;
+}
+
+/* 其他 */
+.maskFf {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.maskHs {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.active {
+  color: #457bc7 !important;
+  border-bottom: 0.04rem solid #457bc7;
+}
+
+.routeActive {
+  color: #409EFF !important;
+}
+
+.flashIcon {
+  height: 0.4rem;
+  background-color: #457bc7;
+  color: #ffffff;
+  font-size: 0.24rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 0.1rem;
+  border-radius: 0.05rem;
+  margin-right: 0.1rem;
+}
+
+.icon-qianjin {
+  color: #999999;
+  font-size: 0.4rem;
+}
+
+img {
+  background-color: #f5f5f5;
+}

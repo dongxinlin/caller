@@ -1,0 +1,121 @@
+/* 高度 */
+.comHei40R {
+  width: 100%;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  overflow: hidden;
+}
+
+.comHei60R {
+  width: 100%;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  overflow: hidden;
+}
+
+.comHei80R {
+  width: 100%;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  overflow: hidden;
+}
+
+.comHei88R {
+  width: 100%;
+  height: 0.88rem;
+  line-height: 0.88rem;
+  overflow: hidden;
+}
+
+.comHei98R {
+  width: 100%;
+  height: 0.98rem;
+  line-height: 0.4rem;
+  overflow: hidden;
+}
+
+.comHeiSp {
+  width: 100%;
+  min-height: 0.88rem;
+  line-height: 0.4rem;
+  border-bottom: 0.01rem solid #dddddd;
+  display: flex;
+  align-items: center;
+  .name {
+    min-width: 1.2rem;
+    padding-right: 0.2rem;
+  }
+  .last {
+    flex: 1;
+    word-break: break-all;
+  }
+}
+
+/* 行高 */
+.lh30R {
+  line-height: 0.3rem !important;
+}
+
+.lh40R {
+  line-height: 0.4rem !important;
+}
+
+.lh50R {
+  line-height: 0.5rem !important;
+}
+
+.lhNo {
+  line-height: normal;
+}
+
+/* 百分比 */
+.full {
+  width: 100%;
+  height: 100%;
+}
+
+.w50 {
+  width: 50%;
+}
+
+.w100 {
+  width: 100% !important;
+}
+
+.h50 {
+  height: 50%;
+}
+
+.h100 {
+  height: 100%;
+}
+
+/* 面积 */
+.zfx40R {
+  width: 0.4rem;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  text-align: center;
+  display: inline-block;
+}
+
+.zfx60R {
+  width: 0.6rem;
+  height: 0.6rem;
+  line-height: 0.6rem;
+  text-align: center;
+  display: inline-block;
+}
+
+.zfx80R {
+  width: 0.8rem;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  text-align: center;
+  display: inline-block;
+}
+
+.dialogSeArea {
+  width: 6rem;
+  height: 8rem;
+}

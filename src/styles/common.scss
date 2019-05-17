@@ -1,0 +1,68 @@
+.scrollYA {
+  overflow-y: auto;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    height: 0;
+    font-size: 0;
+    content: " ";
+    clear: both;
+  }
+}
+
+.over {
+  overflow: hidden;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.tal {
+  text-align: left;
+}
+
+.tac {
+  text-align: center;
+}
+
+.tar {
+  text-align: right;
+}
+
+.dB {
+  display: block;
+  width: 100%;
+}
+
+.dIb {
+  display: inline-block !important;
+}
+
+.dN {
+  display: none;
+}
+
+.zIndex {
+  z-index: 100 !important;
+}
+
+.zIndexH {
+  z-index: 9999 !important;
+}
+
+.breakAll {
+  word-break: break-all;
+}
+
+.circle {
+  border-radius: 50%;
+  overflow: hidden;
+}

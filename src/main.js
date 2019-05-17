@@ -1,31 +1,37 @@
 import Vue from 'vue'
 import App from './App'
-import router from './router'
-import Cube from 'cube-ui'
-import VueWeChatTitle from 'vue-wechat-title'
-import './utils/vuefilter'
-import '../node_modules/amfe-flexible/index'
-import './assets/icon/iconfont.css'
-import tool from '@/utils/common';
-import server from '@/utils/request.js'
-Vue.prototype.axios = server
-import Vconsole from 'vconsole';
-const vConsole = new Vconsole();
-Vue.use(VueWeChatTitle)
-Vue.use(Cube)
 
+import cube from 'cube-ui'
+import router from '@/router'
+import store from '@/store'
 
+import vueLazyLoad from 'vue-lazyload'
+import fastClick from 'fastclick'
+// import vconsole from 'vconsole'
 
+import '@/styles/index.scss' // global css
 
+import '@/utils' // 依赖
 
+fastClick.attach(document.body)
+// const vConsole = new vconsole()
 
+import Vant from 'vant';
+import 'vant/lib/index.css';
 
+Vue.use(Vant);
 
-Vue.config.productionTip = false
+Vue.use(cube)
+Vue.use(require('vue-wechat-title')) // 微信切换title
+Vue.use(vueLazyLoad, {
+  loading: './static/img/loading.png',
+  error: './static/img/404.png'
+})
+Vue.config.productionTip = false // eslint-disable no-new
 
 new Vue({
   el: '#app',
   router,
-  components: { App },
-  template: '<App/>'
+  store,
+  render: h => h(App)
 })

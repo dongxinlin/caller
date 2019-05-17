@@ -1,0 +1,72 @@
+@import './border.scss';
+@import './buju.scss';
+@import './color.scss';
+@import './common.scss';
+@import './cube.scss';
+@import './font.scss';
+@import './height.scss';
+@import './input.scss';
+@import './mpa.scss';
+@import './transition.scss';
+@import '../assets/font/iconfont.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, html, i, iframe, img, input, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video{
+  font-size: 0.28rem;
+}
+html {
+  height: 100%;
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+  color: #333333;
+  font-size: 0.28rem;
+  overflow: hidden;
+}
+
+ul, li, ol {
+  list-style: none;
+}
+
+input, button, img {
+  outline: none;
+  border: none;
+}
+
+i, span, img {
+  font-style: normal;
+  vertical-align: middle;
+}
+
+/* 去除数字输入框标识 */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+#app {
+  height: 100%;
+  overflow: hidden;
+}
+
+a, a:focus, a:hover {
+  cursor: pointer;
+  color: inherit;
+  outline: none;
+  text-decoration: none;
+}
+
+div:focus, a:active {
+  outline: none;
+}
